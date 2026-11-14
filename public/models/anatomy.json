@@ -1,0 +1,151 @@
+{
+ "source": "BodyParts3D, © 2008 Database Center for Life Science (DBCLS), licensed CC BY-SA 2.1 JP — https://dbarchive.biosciencedbc.jp/en/bodyparts3d/",
+ "builtAt": "2026-11-14T21:31:18.982Z",
+ "structures": {
+  "skeleton": {
+   "system": "musculoskeletal",
+   "layer": "skeleton",
+   "label": "Skeleton",
+   "parts": 317,
+   "of": 317,
+   "tris": 92048
+  },
+  "brain": {
+   "system": "neuro",
+   "layer": "organs",
+   "label": "Brain",
+   "parts": 89,
+   "of": 89,
+   "tris": 31166
+  },
+  "veins": {
+   "system": "cardiovascular",
+   "layer": "vessels",
+   "label": "Major veins",
+   "parts": 19,
+   "of": 19,
+   "tris": 5120
+  },
+  "eyes": {
+   "system": "neuro",
+   "layer": "organs",
+   "label": "Eyes",
+   "parts": 1,
+   "of": 1,
+   "tris": 1600
+  },
+  "diaphragm": {
+   "system": "respiratory",
+   "layer": "organs",
+   "label": "Diaphragm",
+   "parts": 1,
+   "of": 1,
+   "tris": 4000
+  },
+  "muscles": {
+   "system": "musculoskeletal",
+   "layer": "muscles",
+   "label": "Muscles",
+   "parts": 110,
+   "of": 110,
+   "tris": 109764
+  },
+  "intestines": {
+   "system": "metabolic",
+   "layer": "organs",
+   "label": "Intestines",
+   "parts": 6,
+   "of": 6,
+   "tris": 12016
+  },
+  "arteries": {
+   "system": "cardiovascular",
+   "layer": "vessels",
+   "label": "Major arteries",
+   "parts": 23,
+   "of": 23,
+   "tris": 6238
+  },
+  "kidneys": {
+   "system": "metabolic",
+   "layer": "organs",
+   "label": "Kidneys",
+   "parts": 7,
+   "of": 7,
+   "tris": 3992
+  },
+  "heart": {
+   "system": "cardiovascular",
+   "layer": "organs",
+   "label": "Heart",
+   "parts": 24,
+   "of": 24,
+   "tris": 13892
+  },
+  "airway": {
+   "system": "respiratory",
+   "layer": "organs",
+   "label": "Airway",
+   "parts": 3,
+   "of": 3,
+   "tris": 4998
+  },
+  "thymus": {
+   "system": "immune",
+   "layer": "organs",
+   "label": "Thymus",
+   "parts": 2,
+   "of": 2,
+   "tris": 1598
+  },
+  "stomach": {
+   "system": "metabolic",
+   "layer": "organs",
+   "label": "Stomach",
+   "parts": 2,
+   "of": 2,
+   "tris": 2998
+  },
+  "skin": {
+   "system": "body",
+   "layer": "skin",
+   "label": "Skin",
+   "parts": 1,
+   "of": 1,
+   "tris": 51740
+  },
+  "spleen": {
+   "system": "immune",
+   "layer": "organs",
+   "label": "Spleen",
+   "parts": 1,
+   "of": 1,
+   "tris": 1800
+  },
+  "liver": {
+   "system": "metabolic",
+   "layer": "organs",
+   "label": "Liver",
+   "parts": 2,
+   "of": 2,
+   "tris": 4998
+  },
+  "pancreas": {
+   "system": "metabolic",
+   "layer": "organs",
+   "label": "Pancreas",
+   "parts": 1,
+   "of": 1,
+   "tris": 1800
+  },
+  "lungs": {
+   "system": "respiratory",
+   "layer": "organs",
+   "label": "Lungs",
+   "parts": 5,
+   "of": 5,
+   "tris": 15990
+  }
+ },
+ "heightM": 1.655
+}

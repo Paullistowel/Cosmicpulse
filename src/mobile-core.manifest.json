@@ -1,0 +1,134 @@
+{
+  "source": "CosmicPulse mobile app",
+  "syncedAt": "2026-11-14T13:58:54.698Z",
+  "files": [
+    {
+      "file": "data/activity.ts",
+      "sha256": "076323c6933398bd"
+    },
+    {
+      "file": "data/demo/conditions.ts",
+      "sha256": "c2c3819902b45cab"
+    },
+    {
+      "file": "data/demo/drugs.ts",
+      "sha256": "9cda4c15de00db50"
+    },
+    {
+      "file": "data/demo/pool.ts",
+      "sha256": "f22d8cb86cdd8b69"
+    },
+    {
+      "file": "data/demo/random.ts",
+      "sha256": "b8839a8ae7ce6364"
+    },
+    {
+      "file": "data/demo/reference.ts",
+      "sha256": "392b91160794827f"
+    },
+    {
+      "file": "data/demo/scenarios.ts",
+      "sha256": "4fd7c7d38395e23d"
+    },
+    {
+      "file": "data/types.ts",
+      "sha256": "e5daea3d992587e1"
+    },
+    {
+      "file": "data/vitals.ts",
+      "sha256": "ba3a795add0850a3"
+    },
+    {
+      "file": "engine/activity.ts",
+      "sha256": "966f861ac816db19"
+    },
+    {
+      "file": "engine/analysis.ts",
+      "sha256": "bc76ac3bbb82a528"
+    },
+    {
+      "file": "engine/assistant.ts",
+      "sha256": "792c163c46e742f2"
+    },
+    {
+      "file": "engine/autonomy.ts",
+      "sha256": "fade5965684a0c4a"
+    },
+    {
+      "file": "engine/baseline.ts",
+      "sha256": "548a6a060b73686a"
+    },
+    {
+      "file": "engine/explain.ts",
+      "sha256": "562f03a52cccfdc3"
+    },
+    {
+      "file": "engine/index.ts",
+      "sha256": "1c527654d2504d03"
+    },
+    {
+      "file": "engine/knowledge/protocols.ts",
+      "sha256": "d817731c89546099"
+    },
+    {
+      "file": "engine/knowledge/retrieval.ts",
+      "sha256": "cb05380a9a319518"
+    },
+    {
+      "file": "engine/mission-rules.ts",
+      "sha256": "7d5715e627d2fafb"
+    },
+    {
+      "file": "engine/risk.ts",
+      "sha256": "b21af9d7166a3645"
+    },
+    {
+      "file": "shared/contract.ts",
+      "sha256": "926078aa6b609d7b"
+    },
+    {
+      "file": "lib/format.ts",
+      "sha256": "0ac7d58a5a722fd4"
+    },
+    {
+      "file": "lib/analysis.ts",
+      "sha256": "a1ca553ea100e23f"
+    },
+    {
+      "file": "lib/interactions.ts",
+      "sha256": "4172e8619387b390"
+    },
+    {
+      "file": "services/health-integrations/ble/gatt.ts",
+      "sha256": "ad4ce0aa47cb5688"
+    },
+    {
+      "file": "features/health/vitals.ts",
+      "sha256": "4848576762c7c5b1"
+    },
+    {
+      "file": "features/health/meta.ts",
+      "sha256": "e5e2dfc055d61136"
+    },
+    {
+      "file": "features/intelligence/intel.ts",
+      "sha256": "094f8eaa5f716d75"
+    },
+    {
+      "file": "features/medical/lib.ts",
+      "sha256": "cc0e7d1cef0a1387"
+    },
+    {
+      "file": "features/medical/report-model.ts",
+      "sha256": "71a20116d5f2a671"
+    },
+    {
+      "file": "features/assistant/context.ts",
+      "sha256": "30d47dd0d8e0d392"
+    },
+    {
+      "file": "features/emergency/lib.ts",
+      "sha256": "1ebb14303874c71c"
+    }
+  ]
+}

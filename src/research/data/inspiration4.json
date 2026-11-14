@@ -1,0 +1,2134 @@
+{
+ "title": "SpaceX Inspiration4 crew clinical blood panels",
+ "mission": {
+  "name": "SpaceX Inspiration4",
+  "start": "2021-09-16",
+  "end": "2021-09-18",
+  "durationDays": 3,
+  "orbit": "Low Earth orbit",
+  "crewSize": 4
+ },
+ "timepoints": [
+  "L-92",
+  "L-44",
+  "L-3",
+  "R+1",
+  "R+45",
+  "R+82",
+  "R+194"
+ ],
+ "timepointNote": "L-n = days before launch; R+n = days after return. OSD-575 lists L-92, L-44, L-3, R+1, R+45, R+82 (some files also include R+194).",
+ "retrievedAt": "2026-11-14T13:49:28.447Z",
+ "license": "NASA OSDR open-access processed data. Acknowledge: \"Data are courtesy of the NASA Open Science Data Repository.\"",
+ "citations": [
+  "Collection of Biospecimens from the Inspiration4 Mission Establishes the Standards for the Space Omics and Medical Atlas (SOMA). Nature Communications (2024). doi:10.1038/s41467-024-48806-z",
+  "The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature (2024). doi:10.1038/s41586-024-07639-y",
+  "Gebre SG, Scott RT, Saravia-Butler AM, Lopez DK, Sanders LM, Costes SV (2024). NASA Open Science Data Repository: open science for life in space. Nucleic Acids Research 53(D1):D1697–D1710. doi:10.1093/nar/gkae1116"
+ ],
+ "panels": [
+  {
+   "osd": "OSD-575",
+   "panel": "Comprehensive metabolic panel (serum)",
+   "file": "LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv",
+   "fileUrl": "https://osdr.nasa.gov/geode-py/ws/studies/OSD-575/download?source=datamanager&file=LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv",
+   "fileDateCreated": "2024-05-15T08:37:19.341Z",
+   "analytes": [
+    {
+     "key": "glucose",
+     "label": "Glucose",
+     "unit": "mg/dL",
+     "refLow": 65,
+     "refHigh": 99,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 83
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 80
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 69
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 90
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 84
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 91
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 87
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 69
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 72
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 78
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 83
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 44
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 77
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 84
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 77
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 62
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 75
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 103
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 36
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 80
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 73
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 100
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 83
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 56
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 97
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 43
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 80
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 84
+      }
+     ]
+    },
+    {
+     "key": "calcium",
+     "label": "Calcium",
+     "unit": "mg/dL",
+     "refLow": 8.6,
+     "refHigh": 10.3,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 9.7
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 10
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 9.6
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 9.7
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 9.6
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 10.1
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 9.4
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 10.2
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 9.7
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 9.3
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 9.2
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 9.3
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 9.7
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 9.5
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 9.3
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 10.3
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 9.5
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 9.4
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 9.6
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 10
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 9.6
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 10
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 10.1
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 10.2
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 9.8
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 9.8
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 10
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 9.8
+      }
+     ]
+    },
+    {
+     "key": "sodium",
+     "label": "Sodium",
+     "unit": "mmol/L",
+     "refLow": 135,
+     "refHigh": 146,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 141
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 139
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 142
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 138
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 138
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 140
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 137
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 142
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 141
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 143
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 137
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 140
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 141
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 138
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 139
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 139
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 138
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 137
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 136
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 138
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 137
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 138
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 140
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 141
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 140
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 139
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 140
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 141
+      }
+     ]
+    },
+    {
+     "key": "potassium",
+     "label": "Potassium",
+     "unit": "mmol/L",
+     "refLow": 3.5,
+     "refHigh": 5.3,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 4.6
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 4.2
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 3.9
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 4.4
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 4
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 4.3
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 4.3
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 3.9
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 4
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 3.8
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 3.5
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 4.1
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 3.7
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 4.4
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 3.7
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 3.5
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 3.3
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 3
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 4.4
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 3.7
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 3.8
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 4.2
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 4.2
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 3.7
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 4
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 5.9
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 4.2
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 3.8
+      }
+     ]
+    },
+    {
+     "key": "creatinine",
+     "label": "Creatinine",
+     "unit": "mg/dL",
+     "refLow": 0.6,
+     "refHigh": 1.35,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 1.24
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 1.1
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 1.37
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 1.12
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 1.11
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 1.25
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 1.29
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 0.83
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 0.88
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 0.96
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 0.95
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 1.02
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 0.82
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 1.02
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 1
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 1.03
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 1.08
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 0.89
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 0.94
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 0.89
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 1.1
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 1.14
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 1.08
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 1.13
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 1.15
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 1.08
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 1.11
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 1.31
+      }
+     ]
+    },
+    {
+     "key": "bun",
+     "label": "Urea nitrogen (BUN)",
+     "unit": "mg/dL",
+     "refLow": 7,
+     "refHigh": 25,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 25
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 19
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 20
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 18
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 15
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 22
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 28
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 14
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 16
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 17
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 20
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 19
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 16
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 18
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 17
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 19
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 26
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 21
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 19
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 23
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 28
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 22
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 19
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 19
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 26
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 21
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 16
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 27
+      }
+     ]
+    },
+    {
+     "key": "albumin",
+     "label": "Albumin",
+     "unit": "g/dL",
+     "refLow": 3.6,
+     "refHigh": 5.1,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 5
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 5
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 4.9
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 4.9
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 4.9
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 5.1
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 4.6
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 4.9
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 4.6
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 4.3
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 4.4
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 4.2
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 4.5
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 4.3
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 4.4
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 4.9
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 4.2
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 4.2
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 4.5
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 4.8
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 4.4
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 4.6
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 4.4
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 4.6
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 4.5
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 4.5
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 4.6
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 4.3
+      }
+     ]
+    },
+    {
+     "key": "alkaline_phosphatase",
+     "label": "Alkaline phosphatase",
+     "unit": "U/L",
+     "refLow": 36,
+     "refHigh": 130,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 51
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 46
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 45
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 52
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 46
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 49
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 50
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 73
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 78
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 68
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 71
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 65
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 65
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 66
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 33
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 41
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 31
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 41
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 51
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 50
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 43
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 58
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 56
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 55
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 62
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 60
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 54
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 57
+      }
+     ]
+    },
+    {
+     "key": "total_protein",
+     "label": "Total protein",
+     "unit": "g/dL",
+     "refLow": 6.1,
+     "refHigh": 8.1,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 7.3
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 7.7
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 7.4
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 7.5
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 7.2
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 7.8
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 7
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 7.9
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 7.6
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 7
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 7.4
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 6.8
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 7.3
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 7.3
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 7.1
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 8.8
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 6.8
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 7.1
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 7.4
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 7.5
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 7.3
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 7.4
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 7.3
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 7.3
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 7.4
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 7.3
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 7.4
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 7.2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "osd": "OSD-569",
+   "panel": "Complete blood count (whole blood)",
+   "file": "LSDS-7_Complete_Blood_Count_CBC_TRANSFORMED.csv",
+   "fileUrl": "https://osdr.nasa.gov/geode-py/ws/studies/OSD-569/download?source=datamanager&file=LSDS-7_Complete_Blood_Count_CBC_TRANSFORMED.csv",
+   "fileDateCreated": "2024-05-15T08:36:55.553Z",
+   "analytes": [
+    {
+     "key": "wbc",
+     "label": "White blood cells",
+     "unit": "10³/µL",
+     "refLow": 3.8,
+     "refHigh": 10.8,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 5.4
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 5.5
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 7
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 5
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 4.9
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 4.9
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 4.9
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 6.5
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 5.4
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 7.2
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 5.5
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 6.4
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 5.3
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 6.4
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 9.6
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 9.3
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 9.8
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 7
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 7.8
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 8.8
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 7.4
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 7.7
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 6.4
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 10.6
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 8.1
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 6.8
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 7.9
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 8.3
+      }
+     ]
+    },
+    {
+     "key": "lymphocytes_abs",
+     "label": "Lymphocytes (absolute)",
+     "unit": "cells/µL",
+     "refLow": 850,
+     "refHigh": 3900,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 2241
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 1859
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 2667
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 1640
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 2146
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 2171
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 1847
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 2119
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 1982
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 2873
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 1540
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 2874
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 1701
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 2573
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 6826
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 2083
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 3156
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 2086
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 2379
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 3247
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 2220
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 1786
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 1613
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 2947
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 2155
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 1938
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 2307
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 2639
+      }
+     ]
+    },
+    {
+     "key": "neutrophils_abs",
+     "label": "Neutrophils (absolute)",
+     "unit": "cells/µL",
+     "refLow": 1500,
+     "refHigh": 7800,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 2349
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 2998
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 3570
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 2685
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 2200
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 1994
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 2391
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 3705
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 2873
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 3701
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 3328
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 2765
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 3132
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 3123
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 10.1
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 6408
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 5792
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 4088
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 4618
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 4576
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 4151
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 4766
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 3699
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 6318
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 4528
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 3618
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 4361
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 4200
+      }
+     ]
+    },
+    {
+     "key": "hematocrit",
+     "label": "Haematocrit",
+     "unit": "%",
+     "refLow": 38.5,
+     "refHigh": 50,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 42.5
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 45.1
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 44.5
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 43.6
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 43.3
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 46.1
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 41.8
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 40.8
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 37.8
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 35.9
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 36.4
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 37.1
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 34.7
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 38.3
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 40.7
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 42.6
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 41.6
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 41.4
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 44.3
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 44.6
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 40.4
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 49.1
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 50
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 49
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 48.3
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 49
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 47.5
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 48
+      }
+     ]
+    },
+    {
+     "key": "platelets",
+     "label": "Platelets",
+     "unit": "10³/µL",
+     "refLow": 140,
+     "refHigh": 400,
+     "points": [
+      {
+       "crew": "C001",
+       "day": "L-92",
+       "value": 241
+      },
+      {
+       "crew": "C001",
+       "day": "L-44",
+       "value": 237
+      },
+      {
+       "crew": "C001",
+       "day": "L-3",
+       "value": 258
+      },
+      {
+       "crew": "C001",
+       "day": "R+1",
+       "value": 227
+      },
+      {
+       "crew": "C001",
+       "day": "R+45",
+       "value": 228
+      },
+      {
+       "crew": "C001",
+       "day": "R+82",
+       "value": 257
+      },
+      {
+       "crew": "C001",
+       "day": "R+194",
+       "value": 214
+      },
+      {
+       "crew": "C002",
+       "day": "L-92",
+       "value": 241
+      },
+      {
+       "crew": "C002",
+       "day": "L-44",
+       "value": 229
+      },
+      {
+       "crew": "C002",
+       "day": "L-3",
+       "value": 241
+      },
+      {
+       "crew": "C002",
+       "day": "R+1",
+       "value": 252
+      },
+      {
+       "crew": "C002",
+       "day": "R+45",
+       "value": 252
+      },
+      {
+       "crew": "C002",
+       "day": "R+82",
+       "value": 245
+      },
+      {
+       "crew": "C002",
+       "day": "R+194",
+       "value": 243
+      },
+      {
+       "crew": "C003",
+       "day": "L-92",
+       "value": 12.9
+      },
+      {
+       "crew": "C003",
+       "day": "L-44",
+       "value": 345
+      },
+      {
+       "crew": "C003",
+       "day": "L-3",
+       "value": 367
+      },
+      {
+       "crew": "C003",
+       "day": "R+1",
+       "value": 359
+      },
+      {
+       "crew": "C003",
+       "day": "R+45",
+       "value": 396
+      },
+      {
+       "crew": "C003",
+       "day": "R+82",
+       "value": 345
+      },
+      {
+       "crew": "C003",
+       "day": "R+194",
+       "value": 185
+      },
+      {
+       "crew": "C004",
+       "day": "L-92",
+       "value": 239
+      },
+      {
+       "crew": "C004",
+       "day": "L-44",
+       "value": 227
+      },
+      {
+       "crew": "C004",
+       "day": "L-3",
+       "value": 295
+      },
+      {
+       "crew": "C004",
+       "day": "R+1",
+       "value": 240
+      },
+      {
+       "crew": "C004",
+       "day": "R+45",
+       "value": 281
+      },
+      {
+       "crew": "C004",
+       "day": "R+82",
+       "value": 198
+      },
+      {
+       "crew": "C004",
+       "day": "R+194",
+       "value": 256
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

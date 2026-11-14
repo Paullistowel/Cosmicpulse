@@ -1,0 +1,10 @@
+export type ModuleId = 'command' | 'medical' | 'exercise' | 'quarters' | 'lab' | 'cupola';
+
+export const MODULES: { id: ModuleId; name: string; href: string; image: string; caption: string; body: string; minRank: number; pos: [number, number, number]; color: string }[] = [
+  { id: 'command', name: 'Mission control', href: '/', image: '/images/nasa/mission-control.jpg', caption: 'NASA Mission Control, Houston (JSC).', body: 'Your command centre: mission status, Sentinel briefing and the health of every body system.', minRank: 0, pos: [0, 0, 0], color: '#7CC8F2' },
+  { id: 'medical', name: 'Medical station', href: '/medical', image: '/images/nasa/blood-sample.jpg', caption: 'Processing blood and saliva samples aboard the ISS (NASA).', body: 'Incidents, medication records, the medical kit, flight-surgeon messages and emergency guidance.', minRank: 0, pos: [-2.4, 0, 0], color: '#FF8A8A' },
+  { id: 'exercise', name: 'Exercise area', href: '/activity', image: '/images/nasa/treadmill.jpg', caption: 'Treadmill countermeasure exercise on the ISS (NASA).', body: 'Countermeasure exercise protects bones, muscles and heart in weightlessness. Log activity and see your trends.', minRank: 0, pos: [2.4, 0, 0], color: '#3FD38E' },
+  { id: 'quarters', name: 'Sleeping quarters', href: '/sleep', image: '/images/nasa/quarters.jpg', caption: 'Crew quarters aboard the ISS (NASA).', body: 'Sleep and recovery: duration, quality, sleep debt and fatigue — a NASA behavioural-health risk.', minRank: 0, pos: [0, 0, -2.2], color: '#A99BFF' },
+  { id: 'lab', name: 'Research laboratory', href: '/research', image: '/images/nasa/blood-sample.jpg', caption: 'Human research on the ISS (NASA).', body: 'The NASA and CSA evidence library, Inspiration4 crew data and live OSDR search.', minRank: 1, pos: [0, 0, 2.2], color: '#F2B84B' },
+  { id: 'cupola', name: 'Observation cupola', href: '/wellness', image: '/images/nasa/cupola.jpg', caption: 'A CSA astronaut aboard the ISS (NASA).', body: 'A quiet place to reflect: mood check-ins, confinement wellbeing and private journalling.', minRank: 2, pos: [0, 1.2, 0], color: '#62D2E6' },
+];

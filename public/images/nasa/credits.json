@@ -1,0 +1,96 @@
+{
+  "retrievedAt": "2026-11-14T14:36:40.997Z",
+  "api": "https://images-api.nasa.gov",
+  "images": {
+    "treadmill": {
+      "nasaId": "iss018e030101",
+      "title": "ISS Expedition 18 Sandra Magnus on the Treadmill Vibration Isolation and Stabilization (TVIS) in Service Module (SM)",
+      "center": "JSC",
+      "dateCreated": "2009-02-12",
+      "source": "https://images.nasa.gov/details/iss018e030101",
+      "file": "/images/nasa/treadmill.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "quarters": {
+      "nasaId": "iss054e022260",
+      "title": "View inside the crew quarters",
+      "center": "JSC",
+      "dateCreated": "2018-01-16",
+      "source": "https://images.nasa.gov/details/iss054e022260",
+      "file": "/images/nasa/quarters.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "aurora": {
+      "nasaId": "iss058e005282",
+      "title": "View of the Earth's limb with an aurora",
+      "center": "JSC",
+      "dateCreated": "2019-01-18",
+      "source": "https://images.nasa.gov/details/iss058e005282",
+      "file": "/images/nasa/aurora.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "solar-flare": {
+      "nasaId": "GSFC_20171208_Archive_e001210",
+      "title": "NASA's SDO Shows Images of Significant Solar Flare",
+      "center": "GSFC",
+      "dateCreated": "2017-12-08",
+      "source": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001210",
+      "file": "/images/nasa/solar-flare.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "mission-control": {
+      "nasaId": "jsc2006e38928",
+      "title": "Expedition 13 flight controller on console during mission - Orbit 1, BFCR",
+      "center": "JSC",
+      "dateCreated": "2006-08-31",
+      "source": "https://images.nasa.gov/details/jsc2006e38928",
+      "file": "/images/nasa/mission-control.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "cupola": {
+      "nasaId": "iss058e003901",
+      "title": "Astronaut David Saint-Jacques of the Canadian Space Agency",
+      "center": "JSC",
+      "dateCreated": "2019-01-14",
+      "source": "https://images.nasa.gov/details/iss058e003901",
+      "file": "/images/nasa/cupola.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "mars": {
+      "nasaId": "PIA19679",
+      "title": "Panorama from Curiosity Sol 1000 Location",
+      "center": "JPL",
+      "dateCreated": "2015-07-01",
+      "source": "https://images.nasa.gov/details/PIA19679",
+      "file": "/images/nasa/mars.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "blood-sample": {
+      "nasaId": "iss071e414653",
+      "title": "NASA astronaut Jeanette Epps processes blood and saliva samples",
+      "center": "JSC",
+      "dateCreated": "2024-08-01",
+      "source": "https://images.nasa.gov/details/iss071e414653",
+      "file": "/images/nasa/blood-sample.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "earth-night": {
+      "nasaId": "iss070e062746",
+      "title": "iss070e062746",
+      "center": "JSC",
+      "dateCreated": "2024-01-10",
+      "source": "https://images.nasa.gov/details/iss070e062746",
+      "file": "/images/nasa/earth-night.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    },
+    "iss-orbit": {
+      "nasaId": "s88e5157",
+      "title": "View of the International Space Station in orbit",
+      "center": "JSC",
+      "dateCreated": "1998-12-13",
+      "source": "https://images.nasa.gov/details/s88e5157",
+      "file": "/images/nasa/iss-orbit.jpg",
+      "license": "NASA imagery — generally public domain in the U.S.; no NASA endorsement implied."
+    }
+  }
+}
