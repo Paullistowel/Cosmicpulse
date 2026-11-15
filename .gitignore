@@ -9,3 +9,6 @@ coverage
 
 # BodyParts3D source meshes (large; rebuilt by scripts/anatomy)
 .anatomy-cache/
+
+# Netlify local build output
+.netlify/

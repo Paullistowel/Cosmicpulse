@@ -1,0 +1,17 @@
+# Netlify deployment for CosmicPulse (Next.js 16 App Router).
+# This file overrides the site's UI build settings, so a wrong "Publish directory"
+# in the dashboard can no longer cause a blank "Page not found" deploy.
+[build]
+  command = "npm run build"
+  # Next.js on Netlify publishes .next through the Next.js runtime (never "out" or "public").
+  publish = ".next"
+
+[build.environment]
+  # Next 16 requires Node >= 20.9.
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Netlify's Next.js runtime (OpenNext): server rendering, route handlers (/api/*),
+# image optimisation and headers. Netlify installs it automatically.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
