@@ -9,7 +9,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { HazardScene } from '@/components/simulator/scenes';
 import { Badge, ButtonLink, Card, Overline, ProgressBar, Segmented, cn, LearnMore } from '@/components/ui';
 import { award } from '@/game/progress';
-import { HAZARD_CAPTION, HAZARD_ICON, HAZARD_IMAGE, HAZARD_SHORT_NAME, HAZARD_SYSTEMS } from '@/lib/hazard-ui';
+import { HAZARD_ICON, HAZARD_IMAGE, HAZARD_SHORT_NAME, HAZARD_SYSTEMS } from '@/lib/hazard-ui';
 import { HAZARDS, HAZARD_BY_ID, riskById, type HazardId } from '@/research/hazards';
 import { resolveRef } from '@/research/sources';
 import { DEFAULT_SCENARIO, DESTINATIONS, TAG_COPY, simulate, type Destination, type ScenarioInput, type Tag } from '@/simulator/model';
@@ -71,16 +71,14 @@ export default function SimulatorPage() {
 
       <section className="grid gap-6 xl:grid-cols-5" aria-label={`${h.name} explainer`}>
         <div className="flex flex-col gap-4 xl:col-span-3">
-          <figure className="relative h-56 overflow-hidden rounded-[26px] shadow-card">
-            <Image src={HAZARD_IMAGE[hz]} alt={HAZARD_CAPTION[hz]} fill sizes="(min-width: 1280px) 60vw, 100vw" className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
-            <div className="absolute inset-y-0 left-0 flex max-w-md flex-col justify-end gap-1 p-5 text-white">
-              <h2 className="t-title1">{h.name}</h2>
-              <p className="t-callout text-white/85">{h.short}</p>
+          <div className="flex items-center gap-3 px-1">
+            {(() => { const Icon = HAZARD_ICON[hz]; return <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent"><Icon size={20} /></span>; })()}
+            <div className="min-w-0">
+              <h2 className="t-title2">{h.name}</h2>
+              <p className="t-callout truncate text-ink-2">{h.short}</p>
             </div>
-            <figcaption className="t-caption absolute right-3 bottom-2 text-white/70">{HAZARD_CAPTION[hz]}</figcaption>
-          </figure>
-          <Card><HazardScene id={hz} /></Card>
+          </div>
+          <HazardScene id={hz} />
         </div>
         <div className="flex flex-col gap-4 xl:col-span-2">
           <Card className="flex flex-col gap-3">
@@ -89,7 +87,7 @@ export default function SimulatorPage() {
               {HAZARD_SYSTEMS[hz].map((s) => <Link key={s} href="/twin" className="t-callout rounded-full bg-sunken px-3 py-1.5 font-medium hover:bg-line-strong/40">{SYSTEM_BY_ID[s].name}</Link>)}
             </div>
             <Overline className="mt-1">Health indicators CosmicPulse watches</Overline>
-            <ul className="flex flex-col gap-1.5">{h.indicators.map((i) => <li key={i.label} className="t-callout"><span className="font-medium">{i.label}</span> <span className="text-ink-2">— {i.why}</span></li>)}</ul>
+            <div className="flex flex-wrap gap-1.5">{h.indicators.map((i) => <span key={i.label} title={i.why} className="t-caption rounded-full bg-sunken px-3 py-1.5 font-medium">{i.label}</span>)}</div>
           </Card>
           <Card className="flex flex-col gap-2">
             <Overline>Possible health risks (NASA HRP)</Overline>

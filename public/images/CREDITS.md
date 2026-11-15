@@ -22,3 +22,8 @@ NASA/CSA mission imagery and are not the fictional demo crew.
 ## Logo
 
 `/brand/cosmicpulse-logo.png` — CosmicPulse chrome orbital logo (project asset; background removed for web).
+
+## Textures
+
+`textures/earth-day.jpg` — NASA Visible Earth "Blue Marble" (land and oceans), public domain (NASA);
+retrieved via Wikimedia Commons ("Whole world - land and oceans 12000.jpg"), resized to 2048×1024.

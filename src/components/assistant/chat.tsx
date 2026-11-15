@@ -3,7 +3,7 @@ import { ArrowUp, BookOpenText, Cloud, Cpu, FileText, Mic, ShieldAlert, Siren } 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
-import { Badge, cn } from '@/components/ui';
+import { Badge, cn, Summary } from '@/components/ui';
 import type { ChatMessage } from '@/data/types';
 import { CLOUD_COPY, DISCLAIMER, PROMPTS, cloudState, type AssistantMessage } from '@/services/assistant';
 import { useConnectivity } from '@/services/connectivity';
@@ -49,7 +49,8 @@ function Message({ m }: { m: AssistantMessage | ChatMessage }) {
           <Siren size={16} /> Open Emergency
         </Link>
       )}
-      <p className="t-callout whitespace-pre-line">{m.text}</p>
+      {/* Long replies open as a one-line summary; emergency/escalation replies always show in full. */}
+      {escalated ? <p className="t-callout whitespace-pre-line">{m.text}</p> : <Summary text={m.text} min={260} className="t-callout whitespace-pre-line" />}
       {!!m.protocolRefs?.length && (
         <div className="flex flex-wrap gap-1.5">
           {m.protocolRefs.map((p) => (

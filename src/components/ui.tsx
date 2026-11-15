@@ -108,6 +108,20 @@ function SectionNote({ text }: { text: ReactNode }) {
   );
 }
 
+/** First sentence as a concise summary, the full text one tap away (for long AI explanations). */
+export function Summary({ text, className, min = 140 }: { text: string; className?: string; min?: number }) {
+  const [open, setOpen] = useState(false);
+  const m = text.match(/^(.{20,}?[.!?])(\s|$)/);
+  const short = m && m[1].length < text.length - 15 ? m[1] : null;
+  if (!short || text.length <= min) return <p className={className}>{text}</p>;
+  return (
+    <p className={className}>
+      {open ? text : short}{' '}
+      <button onClick={() => setOpen((o) => !o)} aria-expanded={open} className="t-caption font-semibold text-primary hover:underline">{open ? 'Less' : 'More'}</button>
+    </p>
+  );
+}
+
 /** Collapsible "Learn more" drawer for methodology and science — content kept, hidden by default. */
 export function LearnMore({ title = 'Learn more', children, className }: { title?: string; children: ReactNode; className?: string }) {
   const [open, setOpen] = useState(false);

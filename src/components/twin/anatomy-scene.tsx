@@ -183,22 +183,33 @@ function Model(props: AnatomyProps & { controls: React.RefObject<OrbitControlsIm
   const { camera } = useThree();
   const goal = useRef(new THREE.Vector3());
   const key = useRef('');
+  const flying = useRef(false);
+  // The user's own rotate / zoom always wins: interacting cancels the fly-to.
+  useEffect(() => {
+    const c = props.controls.current;
+    if (!c) return;
+    const stop = () => (flying.current = false);
+    c.addEventListener('start', stop);
+    return () => c.removeEventListener('start', stop);
+  }, [props.controls]);
   useFrame((_, dt) => {
     const c = props.controls.current;
     if (!c) return;
-    const k = props.selected ?? 'body';
+    const k = `${props.selected ?? 'body'}:${focus.distance.toFixed(2)}`;
     if (key.current !== k) {
       key.current = k;
       const dir = camera.position.clone().sub(c.target).normalize();
       if (Math.abs(dir.y) > 0.8) dir.set(0.3, 0.1, 1).normalize();
       goal.current.copy(focus.center).add(dir.multiplyScalar(focus.distance));
+      flying.current = true;
     }
+    if (!flying.current) return;
     const a = props.reducedMotion ? 1 : 1 - Math.exp(-dt * 3);
     c.target.lerp(focus.center, a);
-    const far = camera.position.distanceTo(goal.current) > 0.005;
-    if (far) camera.position.lerp(goal.current, a);
+    camera.position.lerp(goal.current, a);
     c.update();
-    if (far) invalidate();
+    invalidate();
+    if (camera.position.distanceTo(goal.current) < 0.005 && c.target.distanceTo(focus.center) < 0.005) flying.current = false;
   });
 
   const onPick = (e: ThreeEvent<MouseEvent>) => {

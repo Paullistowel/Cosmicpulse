@@ -1,6 +1,6 @@
 'use client';
 
-import { BellRing, BookOpenText, CheckCircle2, Clock, ListChecks, Pause, Play, Volume2, VolumeX } from 'lucide-react';
+import { Activity, BellRing, BookOpenText, CheckCircle2, Clock, HeartPulse, HelpCircle, ListChecks, Pause, Play, Stethoscope, TrendingUp, Volume2, VolumeX } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
@@ -8,7 +8,7 @@ import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { AssistantChat } from '@/components/assistant/chat';
 import { RelationDiagram, SentinelOrb } from '@/components/sentinel';
 import { toast } from '@/components/toast';
-import { Badge, Button, ButtonLink, Card, EmptyState, FindingKindBadge, Overline, SeverityBadge, alertCategory, cn } from '@/components/ui';
+import { Badge, Button, ButtonLink, Card, EmptyState, FindingKindBadge, Overline, SeverityBadge, alertCategory, cn, Summary } from '@/components/ui';
 import { ALERT_STATE_COPY } from '@/features/intelligence/intel';
 import { ago, stamp } from '@/features/health/vitals';
 import { award } from '@/game/progress';
@@ -96,7 +96,7 @@ function SentinelInner() {
               <span className={cn('mt-1 size-2.5 shrink-0 rounded-full', it.tone === 'critical' ? 'bg-critical' : it.tone === 'warning' ? 'bg-warning' : it.tone === 'demo' ? 'bg-demo' : it.tone === 'info' ? 'bg-info' : 'bg-success')} />
               <span className="min-w-0">
                 {it.href ? <Link href={it.href} className="t-headline hover:underline">{it.title}</Link> : <span className="t-headline">{it.title}</span>}
-                <span className="t-callout block text-ink-2">{it.detail}</span>
+                <span className="t-callout line-clamp-2 block text-ink-2" title={it.detail}>{it.detail}</span>
               </span>
             </li>
           ))}
@@ -126,16 +126,21 @@ function SentinelInner() {
               <div className="flex flex-wrap gap-1.5"><FindingKindBadge kind={f.kind} /><SeverityBadge severity={f.severity} />{f.simulated && <Badge label="SYNTHETIC — demonstration" tone="demo" />}</div>
               <h2 className="t-title2">{f.title}</h2>
               <ol className="grid gap-3 lg:grid-cols-2">
-                {seven.answers.map((a, i) => (
-                  <li key={a.q} className="flex gap-3 rounded-[18px] bg-sunken/60 p-3.5">
-                    <span className="t-telemetry flex size-7 shrink-0 items-center justify-center rounded-full bg-violet-soft text-violet">{i + 1}</span>
+                {seven.answers.map((a, i) => {
+                  const Q = Q_ICON[i] ?? Q_ICON[0];
+                  const safety = i === seven.answers.length - 1;
+                  return (
+                  <li key={a.q} className={cn('flex gap-3 rounded-[18px] p-3.5', safety ? 'bg-critical-soft/60 ring-1 ring-[color-mix(in_srgb,var(--critical)_30%,transparent)]' : 'bg-sunken/60')}>
+                    <span className={cn('flex size-9 shrink-0 items-center justify-center rounded-full', safety ? 'bg-critical-soft text-critical' : 'bg-violet-soft text-violet')}><Q.icon size={17} aria-hidden /></span>
                     <div className="min-w-0">
-                      <p className="t-headline">{a.q}</p>
-                      <p className="t-callout text-ink-2">{a.a}</p>
+                      <p className="t-headline">{Q.label}</p>
+                      {/* Safety answer is never shortened. */}
+                      {safety ? <p className="t-callout text-ink-2">{a.a}</p> : <Summary text={a.a} className="t-callout text-ink-2" />}
                       {a.refs?.map((r) => <Link key={r.href + r.text} href={r.href} className="t-caption mt-1 flex items-start gap-1 text-primary hover:underline"><BookOpenText size={12} className="mt-0.5 shrink-0" />{r.source}</Link>)}
                     </div>
                   </li>
-                ))}
+                  );
+                })}
               </ol>
               <div className="flex flex-wrap gap-2 border-t border-line pt-3">
                 <Button size="sm" icon={CheckCircle2} disabled={!!reviewed} onClick={() => { fu.markReviewed(f.id); award('recommendation_reviewed', f.id); toast('Recommendation reviewed'); }}>{reviewed ? `Reviewed ${ago(reviewed, now)}` : 'Mark recommendation reviewed'}</Button>
@@ -196,6 +201,16 @@ function SentinelInner() {
     </div>
   );
 }
+
+const Q_ICON: { icon: typeof Clock; label: string }[] = [
+  { icon: TrendingUp, label: 'What changed?' },
+  { icon: Activity, label: 'Which readings?' },
+  { icon: HeartPulse, label: 'Why it matters' },
+  { icon: HelpCircle, label: 'Possible causes' },
+  { icon: CheckCircle2, label: 'What to do' },
+  { icon: Clock, label: 'When to re-check' },
+  { icon: Stethoscope, label: 'When to call medical' },
+];
 
 export default function SentinelPage() {
   return <Suspense><SentinelInner /></Suspense>;

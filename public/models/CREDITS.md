@@ -14,3 +14,13 @@ model is shared under the same CC BY-SA 2.1 JP terms. `anatomy.json` lists every
 how many source parts it contains.
 
 `../images/twin/body-preview.png` is a render of this model (same licence).
+
+## International Space Station
+
+`iss.glb` is derived from NASA 3D Resources — "International Space Station (ISS) (D) (IGOAL)"
+(https://github.com/nasa/NASA-3D-Resources, https://science.nasa.gov/3d-resources/). NASA 3D
+resources are free to use; NASA does not endorse CosmicPulse. CosmicPulse decoded the Draco mesh,
+removed textures, merged parts into material groups (solar arrays, iROSA, radiators, truss,
+modules, Russian segment, payloads, details), simplified with meshoptimizer (~2.7 M → ~0.2 M
+triangles) and compressed with gltfpack (meshopt). Module positions for the station tour are
+taken from the model's named nodes.

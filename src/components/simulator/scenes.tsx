@@ -1,7 +1,12 @@
 'use client';
 
-import { LearnMore } from '@/components/ui';
-import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
+import { useEffect, useState, type ReactNode } from 'react';
+
+import { webglAvailable } from '@/components/twin/body-map';
+import { LearnMore, cn } from '@/components/ui';
+import { useClientValue, usePrefersReducedMotion } from '@/hooks/use-client-value';
+import { useSettings } from '@/store/settings';
 
 import type { HazardId } from '@/research/hazards';
 
@@ -49,7 +54,7 @@ function Figure({ x, fluidTop, color = 'var(--ink-2)' }: { x: number; fluidTop: 
   );
 }
 
-function Microgravity() {
+function MicrogravityFlat() {
   const [g, setG] = useState(0);
   const load = Math.round(g * 100);
   const shift = 1 - Math.min(1, g);
@@ -73,7 +78,7 @@ function Microgravity() {
   );
 }
 
-function Radiation() {
+function RadiationFlat() {
   const [shield, setShield] = useState(30);
   const pass = Math.round(10 * (1 - shield / 140));
   return (
@@ -92,7 +97,7 @@ function Radiation() {
   );
 }
 
-function Distance() {
+function DistanceFlat() {
   const [au, setAu] = useState(1.5);
   const sec = au * 499;
   const label = sec < 60 ? `${sec.toFixed(1)} s` : `${(sec / 60).toFixed(1)} min`;
@@ -112,7 +117,7 @@ function Distance() {
   );
 }
 
-function Isolation() {
+function IsolationFlat() {
   const [crew, setCrew] = useState(4);
   const [link, setLink] = useState(true);
   useEffect(() => {}, []);
@@ -132,7 +137,7 @@ function Isolation() {
   );
 }
 
-function Environment() {
+function EnvironmentFlat() {
   const [scrub, setScrub] = useState(90);
   const co2 = 1 + (100 - scrub) * 0.06;
   const level = co2 >= 4 ? 'action' : co2 >= 3 ? 'caution' : 'nominal';
@@ -150,15 +155,154 @@ function Environment() {
   );
 }
 
-export function HazardScene({ id }: { id: HazardId }) {
+/* ------------------------------------------------------------------ premium 3D stages */
+
+const MicrogravityStage = dynamic(() => import('./stage').then((m) => m.MicrogravityStage), { ssr: false, loading: StageLoading });
+const RadiationStage = dynamic(() => import('./stage').then((m) => m.RadiationStage), { ssr: false, loading: StageLoading });
+const IsolationStage = dynamic(() => import('./stage').then((m) => m.IsolationStage), { ssr: false, loading: StageLoading });
+const EnvironmentStage = dynamic(() => import('./stage').then((m) => m.EnvironmentStage), { ssr: false, loading: StageLoading });
+const DistanceStage = dynamic(() => import('./stage').then((m) => m.DistanceStage), { ssr: false, loading: StageLoading });
+
+function StageLoading() {
+  return <div className="flex h-full items-center justify-center"><span className="t-telemetry text-ink-3">LOADING EXPEDITION…</span></div>;
+}
+
+/** Cinematic stage: 3D scene, one big number top-left, glass controls along the bottom. */
+function Stage({ scene, big, sub, controls, learn }: { scene: ReactNode; big: ReactNode; sub: string; controls: ReactNode; learn: ReactNode }) {
   return (
-    <div>
-      <style>{CSS}</style>
-      {id === 'gravity' && <Microgravity />}
-      {id === 'radiation' && <Radiation />}
-      {id === 'distance' && <Distance />}
-      {id === 'isolation' && <Isolation />}
-      {id === 'environment' && <Environment />}
+    <div className="flex flex-col gap-3">
+      <div className="twin-stage relative h-[420px] overflow-hidden rounded-[24px] sm:h-[480px]">
+        <div className="absolute inset-0">{scene}</div>
+        <div className="pointer-events-none absolute top-4 left-4 flex flex-col">
+          <span className="t-display tabular" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.6)' }}>{big}</span>
+          <span className="t-caption text-ink-2">{sub}</span>
+        </div>
+        <div className="glass absolute inset-x-3 bottom-3 flex flex-col gap-2.5 rounded-[20px] p-3.5">{controls}</div>
+      </div>
+      <LearnMore title="What’s happening?">{learn}</LearnMore>
     </div>
+  );
+}
+
+function Chips<T extends string | number>({ items, value, onPick }: { items: [string, T][]; value: T; onPick: (v: T) => void }) {
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {items.map(([l, v]) => (
+        <button key={l} onClick={() => onPick(v)} aria-pressed={value === v} className={cn('t-caption rounded-full px-3 py-1.5 font-semibold transition-colors', value === v ? 'bg-pill text-on-pill' : 'bg-[color-mix(in_srgb,var(--ink)_8%,transparent)] hover:bg-[color-mix(in_srgb,var(--ink)_14%,transparent)]')}>{l}</button>
+      ))}
+    </div>
+  );
+}
+
+function Microgravity3D({ still }: { still: boolean }) {
+  const [g, setG] = useState(0);
+  const load = Math.round(g * 100);
+  return (
+    <Stage
+      scene={<MicrogravityStage g={g} still={still} />}
+      big={<>{g === 0 ? '0 g' : `${g.toFixed(2)} g`}</>}
+      sub={`Bone loading ${load}% of Earth · fluids ${g < 0.5 ? 'shift to the head' : 'settle in the legs'}`}
+      controls={<>
+        <Chips items={[['🛰️ Orbit', 0], ['🌙 Moon', 0.165], ['🔴 Mars', 0.375], ['🌍 Earth', 1]]} value={g} onPick={setG} />
+        <Slider label="Gravity" value={g} min={0} max={1} step={0.005} onChange={setG} format={(v) => `${v.toFixed(2)} g`} />
+      </>}
+      learn={<>With less gravity, bones and muscles carry less weight ({load}% of Earth loading here), so they lose strength unless countermeasure exercise replaces that load. Body fluids that gravity normally pulls to the legs shift towards the head — linked to puffy faces, changes in heart and blood-pressure regulation, and research into eye changes (SANS). <span className="text-ink-3">Visualisation is illustrative.</span></>}
+    />
+  );
+}
+
+function Radiation3D({ still }: { still: boolean }) {
+  const [shield, setShield] = useState(30);
+  const pass = Math.round(100 * (1 - shield / 140));
+  return (
+    <Stage
+      scene={<RadiationStage shield={shield} still={still} />}
+      big={<>{pass}%</>}
+      sub="of particles reach the body (illustrative)"
+      controls={<>
+        <Chips items={[['No shield', 0], ['Hull', 30], ['Storm shelter', 90]]} value={shield} onPick={setShield} />
+        <Slider label="Shielding" value={shield} min={0} max={100} step={5} onChange={setShield} format={(v) => `${v}%`} />
+      </>}
+      learn={<>Space radiation — galactic cosmic rays and solar particles — passes into spacecraft and the body; neutrons make up about 30% of the radiation dose on the ISS (CSA). Shielding and shelters reduce some exposure but cannot stop it all, so CosmicPulse tracks dose rate and cumulative dose against the 600 mSv career limit. <span className="text-ink-3">Particle shares are illustrative.</span></>}
+    />
+  );
+}
+
+function Isolation3D({ still }: { still: boolean }) {
+  const [crew, setCrew] = useState(4);
+  const [link, setLink] = useState(true);
+  return (
+    <Stage
+      scene={<IsolationStage crew={crew} link={link} still={still} />}
+      big={<>{crew} 🧑‍🚀</>}
+      sub={link ? 'Crew in contact with Earth' : 'Loss of contact — the crew is on its own'}
+      controls={<>
+        <Chips items={[['2', 2], ['3', 3], ['4', 4], ['6', 6]]} value={crew} onPick={setCrew} />
+        <button onClick={() => setLink((v) => !v)} className={cn('t-callout self-start rounded-full px-4 py-2 font-semibold', link ? 'bg-critical-soft text-critical' : 'bg-success-soft text-success')}>{link ? '📡 Cut the link' : '📡 Restore the link'}</button>
+      </>}
+      learn={<>Small crews living in confined spaces for months show behavioural responses; NASA lists behavioural changes, teamwork and inadequate sleep as related risks and selects, trains and supports crews to cope. CosmicPulse watches sleep, mood, stress and a confinement check-in so changes are noticed early — without labelling anyone. <span className="text-ink-3">Scene is illustrative.</span></>}
+    />
+  );
+}
+
+function Environment3D({ still }: { still: boolean }) {
+  const [scrub, setScrub] = useState(90);
+  const co2 = 1 + (100 - scrub) * 0.06;
+  const level = co2 >= 4 ? 'action' : co2 >= 3 ? 'caution' : 'nominal';
+  return (
+    <Stage
+      scene={<EnvironmentStage co2={co2} level={level} still={still} />}
+      big={<span className={level === 'action' ? 'text-critical' : level === 'caution' ? 'text-warning-ink' : 'text-success'}>{co2.toFixed(1)}</span>}
+      sub={`mmHg cabin CO₂ · ${level === 'nominal' ? '✓ nominal' : level === 'caution' ? '! caution' : '!! action'}`}
+      controls={<>
+        <Chips items={[['Scrubber OK', 90], ['Struggling', 50], ['Failing', 10]]} value={scrub} onPick={setScrub} />
+        <Slider label="CO₂ scrubber" value={scrub} min={0} max={100} step={5} onChange={setScrub} format={(v) => `${v}%`} />
+      </>}
+      learn={<>A spacecraft is both home and life-support machine. If CO₂ removal falls behind, cabin CO₂ rises — associated with headaches and reduced performance — and low oxygen is a hypoxia risk. NASA also monitors microbes and immune responses in the closed habitat. CosmicPulse links cabin sensors to your SpO₂, breathing rate and temperature. <span className="text-ink-3">Caution/action lines are CosmicPulse demo values.</span></>}
+    />
+  );
+}
+
+function Distance3D({ still }: { still: boolean }) {
+  const [au, setAu] = useState(1.52);
+  const sec = au * 499;
+  const label = sec < 60 ? `${sec.toFixed(1)} s` : `${(sec / 60).toFixed(1)} min`;
+  return (
+    <Stage
+      scene={<DistanceStage au={au} seconds={sec} still={still} />}
+      big={<>{label}</>}
+      sub="for a message to reach Earth (one way)"
+      controls={<>
+        <Chips items={[['🌙 Moon', 0.00257], ['🔴 Mars close', 0.38], ['Mars average', 1.52], ['Mars far', 2.5]]} value={au} onPick={setAu} />
+        <Slider label="Distance" value={au} min={0.0026} max={2.6} step={0.0001} onChange={setAu} format={(v) => (v < 0.01 ? `${Math.round(v * 149.6e6).toLocaleString()} km` : `${v.toFixed(2)} AU`)} />
+      </>}
+      learn={<>Radio signals travel at light speed — 499 seconds per astronomical unit. On a Mars mission ground teams cannot answer in real time, so NASA stresses planning and self-sufficiency. That’s why CosmicPulse runs its assessments, alerts and evidence library entirely on board. <span className="text-ink-3">Light time is physics; distances are examples.</span></>}
+    />
+  );
+}
+
+export function HazardScene({ id }: { id: HazardId }) {
+  const gl = useClientValue(webglAvailable, true);
+  const still = usePrefersReducedMotion(useSettings((s) => s.motion));
+  if (!gl) {
+    return (
+      <div>
+        <style>{CSS}</style>
+        {id === 'gravity' && <MicrogravityFlat />}
+        {id === 'radiation' && <RadiationFlat />}
+        {id === 'distance' && <DistanceFlat />}
+        {id === 'isolation' && <IsolationFlat />}
+        {id === 'environment' && <EnvironmentFlat />}
+      </div>
+    );
+  }
+  return (
+    <>
+      {id === 'gravity' && <Microgravity3D still={still} />}
+      {id === 'radiation' && <Radiation3D still={still} />}
+      {id === 'distance' && <Distance3D still={still} />}
+      {id === 'isolation' && <Isolation3D still={still} />}
+      {id === 'environment' && <Environment3D still={still} />}
+    </>
   );
 }

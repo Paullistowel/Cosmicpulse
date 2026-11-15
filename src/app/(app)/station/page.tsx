@@ -10,6 +10,7 @@ import { useClientValue, usePrefersReducedMotion } from '@/hooks/use-client-valu
 
 import { webglAvailable } from '@/components/twin/body-map';
 import { MODULES, type ModuleId } from '@/components/station/modules';
+import { SectionIntro } from '@/components/story';
 import { Badge, Card, cn } from '@/components/ui';
 import { RANKS, award, rankFor, totalXp, useProgress } from '@/game/progress';
 import { useSettings } from '@/store/settings';
@@ -25,20 +26,17 @@ export default function StationPage() {
   const still = usePrefersReducedMotion(motion);
   const m = MODULES.find((x) => x.id === sel);
   const locked = m ? r.index < m.minRank : false;
-  const select = (id: ModuleId) => {
+  const select = (id: ModuleId | null) => {
     setSel(id);
+    if (!id) return;
     const mod = MODULES.find((x) => x.id === id)!;
     if (r.index >= mod.minRank) award('station_visited', id);
   };
   return (
     <div className="flex flex-col gap-5">
-      <header>
-        <p className="t-overline text-primary">Station tour · optional</p>
-        <h1 className="t-title1">Explore your station</h1>
-        <p className="t-callout mt-1 max-w-2xl text-ink-2">Tap a module to fly there. More unlock as you rank up.</p>
-      </header>
+      <SectionIntro chapter="dangers" title="Station tour" say="This is the real International Space Station! Tap a glowing module to fly there." pose="wave" image="/images/nasa/iss-orbit.jpg" />
       <div className="grid gap-5 xl:grid-cols-[1.4fr_1fr]">
-        <section className="relative h-[520px] overflow-hidden rounded-[30px] bg-[#05080D] shadow-card" aria-label="Station model">
+        <section className="relative h-[min(72vh,680px)] min-h-[480px] overflow-hidden rounded-[30px] bg-[#02040A] shadow-card" aria-label="International Space Station model">
           {gl ? <StationScene rankIndex={r.index} selected={sel} onSelect={select} still={still} /> : <p className="t-callout p-6 text-white/70">3D is unavailable in this browser — choose a module from the list.</p>}
           <div className="absolute inset-x-3 bottom-3 flex gap-1.5 overflow-x-auto pb-1">
             {MODULES.map((x) => (
@@ -51,9 +49,9 @@ export default function StationPage() {
         <Card className="flex flex-col gap-4">
           {m ? (
             <>
-              <div className="relative h-48 overflow-hidden rounded-[20px]"><Image src={m.image} alt={m.caption} fill sizes="(min-width: 1280px) 30vw, 100vw" className={cn('object-cover', locked && 'grayscale')} /></div>
-              <p className="t-caption text-ink-3">{m.caption}</p>
+              <div className="relative h-48 overflow-hidden rounded-[20px]" title={m.caption}><Image src={m.image} alt={m.caption} fill sizes="(min-width: 1280px) 30vw, 100vw" className={cn('object-cover', locked && 'grayscale')} /></div>
               <h2 className="t-title2">{m.name}</h2>
+              <p className="t-caption -mt-3 text-ink-3">On the ISS: {m.issName}</p>
               <p className="t-callout text-ink-2">{m.body}</p>
               {locked ? (
                 <Badge label={`Unlocks at ${RANKS[m.minRank].name} (${RANKS[m.minRank].xp} XP)`} tone="neutral" icon={Lock} size="md" className="self-start" />
@@ -63,8 +61,7 @@ export default function StationPage() {
             </>
           ) : (
             <>
-              <h2 className="t-title3">Select a module</h2>
-              <p className="t-callout text-ink-2">Drag to rotate the station, scroll to zoom, and click a module.</p>
+              <h2 className="t-title3">Pick a module 🛰️</h2>
               <ul className="flex flex-col gap-1">{MODULES.map((x) => <li key={x.id}><button onClick={() => select(x.id)} className="t-callout flex w-full items-center gap-2 rounded-[12px] px-2 py-1.5 text-left hover:bg-sunken"><span className="size-2.5 rounded-full" style={{ background: x.color }} />{x.name}{r.index < x.minRank && <Lock size={12} className="ml-auto text-ink-3" />}</button></li>)}</ul>
             </>
           )}

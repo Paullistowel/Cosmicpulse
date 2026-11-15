@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowLeft, BookOpenText, CheckCheck, ClipboardCheck, ExternalLink, FlaskConical, Send, ShieldAlert, Sparkles } from 'lucide-react';
+import { Activity, ArrowLeft, BookOpenText, CheckCheck, ClipboardCheck, ExternalLink, FlaskConical, Gauge, HelpCircle, ListChecks, Send, ShieldAlert, Sparkles, Stethoscope, Target, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useMemo } from 'react';
@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 import { useDock } from '@/components/assistant/use-assistant';
 import { useUnits } from '@/components/health';
 import { toast } from '@/components/toast';
-import { Badge, Button, Card, EmptyState, FindingKindBadge, Notice, Overline, PageHeader, SeverityBadge, alertCategory } from '@/components/ui';
+import { Badge, Button, Card, EmptyState, FindingKindBadge, Notice, Overline, PageHeader, SeverityBadge, alertCategory, Summary, LearnMore } from '@/components/ui';
 import { TrendChart } from '@/components/viz';
 import { VITAL_META, displayUnit } from '@/data/vitals';
 import { explainFinding, findingCategory, findProtocol } from '@/engine';
@@ -22,10 +22,13 @@ import { resolveRef } from '@/research/sources';
 import { useEngine } from '@/store/engine-runner';
 import { useHealth } from '@/store/health';
 
+const STEP_ICON = [Gauge, Activity, Target, TrendingUp, HelpCircle, BookOpenText, ListChecks, Stethoscope];
+
 function Step({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
+  const Icon = STEP_ICON[n - 1] ?? Gauge;
   return (
     <Card className="flex gap-4">
-      <span className="t-telemetry flex size-8 shrink-0 items-center justify-center rounded-full bg-pill text-on-pill">{n}</span>
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary" title={`Step ${n}`}><Icon size={18} aria-hidden /></span>
       <div className="min-w-0 flex-1">
         <h2 className="t-headline mb-1.5">{title}</h2>
         <div className="t-callout flex flex-col gap-2 text-ink-2">{children}</div>
@@ -90,7 +93,8 @@ export default function FindingDetail() {
 
       <div className="grid gap-4 xl:grid-cols-2">
         <Step n={1} title="Indicator">
-          <p><span className="font-medium text-ink">{ex.metricLabel}</span>{metric ? ` — ${VITAL_META[metric].about}` : ''}</p>
+          <p className="t-title3 text-ink">{ex.metricLabel}</p>
+          {metric && <Summary text={VITAL_META[metric].about} />}
         </Step>
         <Step n={2} title="Recorded measurement">
           {ex.latest ? (
@@ -108,12 +112,14 @@ export default function FindingDetail() {
         </Step>
         <Step n={4} title="Nature of the deviation">
           <p><span className="font-medium text-ink">What changed: </span>{finding.whatChanged}</p>
-          <p><span className="font-medium text-ink">Rule: </span>{finding.why}</p>
-          <p><span className="font-medium text-ink">Persistence: </span>{ex.persistence.text}</p>
+          <LearnMore title="Rule & persistence">
+            <p><span className="font-medium text-ink">Rule: </span>{finding.why}</p>
+            <p><span className="font-medium text-ink">Persistence: </span>{ex.persistence.text}</p>
+          </LearnMore>
           {ex.outcome && <p><span className="font-medium text-ink">Since the alert: </span>{ex.outcome.text}</p>}
         </Step>
         <Step n={5} title="Potential contributing factors">
-          <p>{finding.uncertainty}</p>
+          <Summary text={finding.uncertainty} />
           {ev.hazards.length > 0 && (
             <p>
               Spaceflight context:{' '}
@@ -125,7 +131,7 @@ export default function FindingDetail() {
           )}
         </Step>
         <Step n={6} title="Supporting scientific evidence">
-          {ev.refs.slice(0, 4).map((r) => {
+          {ev.refs.slice(0, 1).map((r) => {
             const x = resolveRef(r);
             if (!x) return null;
             return (
@@ -138,7 +144,15 @@ export default function FindingDetail() {
               </p>
             );
           })}
-          {ev.risks.length > 0 && <p>Related NASA HRP risks: {ev.risks.map((r) => r.name).join('; ')}.</p>}
+          {ev.refs.length > 1 && (
+            <LearnMore title={`${Math.min(3, ev.refs.length - 1)} more sources`}>
+              {ev.refs.slice(1, 4).map((r) => {
+                const x = resolveRef(r);
+                return x ? <p key={r}>• {x.fact?.text ?? x.source.summary} <Link href={`/research/${x.source.id}`} className="font-medium text-primary hover:underline">[{x.source.org}]</Link></p> : null;
+              })}
+            </LearnMore>
+          )}
+          {ev.risks.length > 0 && <div className="flex flex-wrap gap-1.5">{ev.risks.map((r) => <span key={r.name} className="t-caption rounded-full bg-sunken px-2.5 py-1">{r.name.replace(/^Risk of /, '')}</span>)}</div>}
         </Step>
         <Step n={7} title="Recommended next steps">
           <ul className="list-disc space-y-1 pl-5">
